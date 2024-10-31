@@ -1,6 +1,8 @@
 //import React from 'react';
 import './dashboard.css';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { faSun } from '@fortawesome/free-solid-svg-icons';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 const Dashboard = () => {
   return (
     <div>
@@ -12,6 +14,10 @@ const Dashboard = () => {
           <li>Skills</li>
           <li>Contact</li>
         </ul>
+      </div>
+      <div className='drkSet flex flex-col'>
+        <FontAwesomeIcon icon={faSun} style={{ color: '#e6620a' }} />
+        <FontAwesomeIcon icon={faMoon} style={{ color: '#FFD43B' }} />
       </div>
       <header>
         <div className='header-container'>

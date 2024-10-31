@@ -21,3 +21,7 @@ li {
   width: 100%;
   height: auto;
 }
+
+.drkSet {
+  display: flex;
+}

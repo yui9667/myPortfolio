@@ -1,24 +1,53 @@
-//import React from 'react';
+import { useState } from 'react';
 import './dashboard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { faSun } from '@fortawesome/free-solid-svg-icons';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 const Dashboard = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleHamburger = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div>
-      <div className='container-nav'>
-        <h5>Yui Jensen</h5>
-        <ul>
-          <li>About Me</li>
-          <li>Project</li>
-          <li>Skills</li>
-          <li>Contact</li>
+      <nav className='nav-bar'>
+        <a href='#body'>Yui Jensen</a>
+        <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
+          <li className='nav-item'>
+            <a href='' className='nav-link'>
+              About Me
+            </a>
+          </li>
+          <li className='nav-item'>
+            <a href='' className='nav-link'>
+              Projects
+            </a>
+          </li>
+          <li className='nav-item'>
+            <a href='' className='nav-link'>
+              Skills
+            </a>
+          </li>
+          <li className='nav-item'>
+            <a href='' className='nav-link'>
+              Contact
+            </a>
+          </li>
+          <div className=''>
+            <FontAwesomeIcon icon={faSun} style={{ color: '#e6620a' }} />
+            <FontAwesomeIcon icon={faMoon} style={{ color: '#FFD43B' }} />
+          </div>
         </ul>
-      </div>
-      <div className='drkSet flex flex-col'>
-        <FontAwesomeIcon icon={faSun} style={{ color: '#e6620a' }} />
-        <FontAwesomeIcon icon={faMoon} style={{ color: '#FFD43B' }} />
-      </div>
+        <div
+          className={`hamburger ${isOpen ? 'active' : ''}`}
+          onClick={toggleHamburger}
+        >
+          <span className='bar'></span>
+          <span className='bar'></span>
+          <span className='bar'></span>
+        </div>
+      </nav>
+
       <header>
         <div className='header-container'>
           <h5>Front End Developer</h5>

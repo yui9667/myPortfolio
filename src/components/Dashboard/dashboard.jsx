@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './dashboard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { faSun } from '@fortawesome/free-solid-svg-icons';
-import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faSun, faMoon, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 const Dashboard = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleHamburger = () => {
@@ -10,8 +10,20 @@ const Dashboard = () => {
   };
   return (
     <div>
-      <nav className='nav-bar'>
-        <a href='#body'>Yui Jensen</a>
+      <div className='relative'>
+        <img
+          src='../src/assets/small-design-up.png'
+          alt=''
+          className='absolute w-28
+          '
+        />
+      </div>
+      <nav className='nav-bar  '>
+        <img
+          src='../src/assets/logo-yui.png'
+          alt='logo'
+          className='pl-10 z-10 w-28'
+        />
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
           <li className='nav-item'>
             <a href='' className='nav-link'>
@@ -48,25 +60,26 @@ const Dashboard = () => {
         </div>
       </nav>
 
-      <header>
-        <div className='header-container'>
-          <h5>Front End Developer</h5>
-          <h1>Hello, my name is Yui Jensen</h1>
-          <p>
-            I am a junior Front End developer with studying experience UX Design
-            and Back End Development. I am keen to learn new things
-          </p>
-
-          <div className='btn-container'>
-            <button className='cv-btn'>CV</button>
-            <button className='linedIn-btn'>LinkedIn</button>
+      <header className=' mt-20 pt-10 '>
+        <div className='flex flex-col items-center justify-center w-full max-m-1'>
+          <h1 className='text-3xl'>
+            Hello, my name is{' '}
+            <strong className='text-[#FE6A00]'>Yui Jensen</strong>
+          </h1>
+          <div className='flex flex-col mt-20 mb-20'>
+            <a href='' className='mb-10'>
+              Scroll Down
+            </a>
+            <FontAwesomeIcon icon={faArrowDown} style={{ color: '#4D4415' }} />
           </div>
         </div>
-        <img
-          className='profile'
-          src='/portfolio/src/assets/image1.png'
-          alt=''
-        />
+        <div className=' relative flex flex-start-end'>
+          <img
+            className=' absolute w-28'
+            src='../src/assets/small-design-down.png'
+            alt=''
+          />
+        </div>
       </header>
     </div>
   );

@@ -57,7 +57,7 @@ a {
   transition: 0.2s ease;
 }
 .nav-link:hover {
-  color: #a64a4b;
+  color: #fe6a00;
 }
 .hamburger {
   cursor: pointer;
@@ -71,7 +71,7 @@ a {
   height: 3px;
   margin: 5px auto;
   transition: all 0.3s ease-in-out;
-  background-color: #a64a4b;
+  background-color: #fe6a00;
 }
 .hamburger.active .bar:nth-child(2) {
   opacity: 0;

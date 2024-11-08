@@ -10,7 +10,7 @@ const Dashboard = () => {
   };
   return (
     <div>
-      <div className='relative'>
+      <div className='relative right-0 '>
         <img
           src='../src/assets/small-design-up.png'
           alt=''
@@ -60,27 +60,67 @@ const Dashboard = () => {
         </div>
       </nav>
 
-      <header className=' mt-20 pt-10 '>
+      <header className=' mt-20 pt-20 '>
         <div className='flex flex-col items-center justify-center w-full max-m-1'>
-          <h1 className='text-3xl'>
+          <h1 className='text-3xl pr-10 pl-10 z-10'>
             Hello, my name is{' '}
             <strong className='text-[#FE6A00]'>Yui Jensen</strong>
           </h1>
+
           <div className='flex flex-col mt-20 mb-20'>
-            <a href='' className='mb-10'>
+            <a href='' className='mb-5 z-10'>
               Scroll Down
             </a>
-            <FontAwesomeIcon icon={faArrowDown} style={{ color: '#4D4415' }} />
+            <FontAwesomeIcon
+              icon={faArrowDown}
+              style={{ color: '#4D4415' }}
+              className='z-10'
+            />
           </div>
         </div>
-        <div className=' relative flex flex-start-end'>
+        <img
+          src='../src/assets/small-design-background1.png'
+          alt='yellow-circle background 1'
+          className='w-30 absolute animate-float1 '
+          style={{ top: '20%', left: '-10%' }}
+        />
+        <img
+          src='../src/assets/small-design-background2.png'
+          alt='yellow-circle background 2'
+          className='w-28 absolute animate-float2'
+          style={{ top: '60%', right: '0%' }}
+        />
+        <div className=' absolute right-0 bottom-0 '>
           <img
-            className=' absolute w-28'
+            className=' w-28 '
             src='../src/assets/small-design-down.png'
             alt=''
           />
         </div>
       </header>
+
+      <section className='flex'>
+        <div>
+          <img src='../src/assets/image2.png' alt='' className='pt-20' />
+          <div>
+            <h5 className=''>
+              I am Junior UX designer & Front End Developer with Back End
+              Development knowledge
+            </h5>
+            <a href='' className='underline decoration-1 tracking-tight'>
+              See More About Me
+            </a>
+            <div>
+              <button>
+                <a href=''>Resume</a>
+              </button>
+              <button>
+                <a href=''>Linkedin</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

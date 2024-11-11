@@ -7,6 +7,14 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-  background-color: #fffadb;
+  background: rgb(186, 162, 0);
+  background: rgb(226, 203, 49);
+  background: linear-gradient(
+    0deg,
+    rgba(226, 203, 49, 1) 0%,
+    rgba(255, 237, 116, 1) 50%,
+    rgba(248, 244, 217, 1) 100%
+  );
+
   color: #4d4415;
 }

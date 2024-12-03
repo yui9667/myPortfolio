@@ -1,9 +1,19 @@
 import './index.css';
-import Dashboard from './components/Dashboard/dashboard';
+//import Dashboard from './components/Dashboard/dashboard';
+import Welcome from './components/Welcome/Welcome';
+
+import { Canvas } from '@react-three/fiber';
+
 function App() {
   return (
     <div>
-      <Dashboard />
+      <Canvas className='h-dvh'>
+        <ambientLight />
+        <pointLight />
+
+        <Welcome />
+      </Canvas>
+      {/* /* <Dashboard /> */}
     </div>
   );
 }

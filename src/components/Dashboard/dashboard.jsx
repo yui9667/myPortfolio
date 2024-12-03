@@ -99,25 +99,6 @@ const Dashboard = () => {
                 />
               </motion.div>
             </div>
-            {/* <img
-          src='../src/assets/small-design-background1.png'
-          alt='yellow-circle background 1'
-          className='w-30 absolute animate-float1 '
-          style={{ top: '20%', left: '-10%' }}
-        />
-        <img
-          src='../src/assets/small-design-background2.png'
-          alt='yellow-circle background 2'
-          className='w-28 absolute animate-float2'
-          style={{ top: '60%', right: '0%' }}
-        /> */}
-            {/* <div className=' absolute right-0 bottom-0 '>
-          <img
-            className=' w-28 '
-            src='../src/assets/small-design-down.png'
-            alt=''
-          />
-        </div> */}
           </header>
 
           <section className='flex'>

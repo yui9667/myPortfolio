@@ -3,6 +3,7 @@ import './dashboard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import { faSun, faMoon, faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import Welcome from '../Welcome/Welcome';
 const Dashboard = () => {
   const { scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [0.2, 2]);
@@ -12,14 +13,6 @@ const Dashboard = () => {
   };
   return (
     <div>
-      {/* <div className='relative right-0 '>
-        <img
-          src='../src/assets/small-design-up.png'
-          alt=''
-          className='absolute w-28
-          '
-        />
-      </div> */}
       <nav className='nav-bar  '>
         <img
           src='../src/assets/logo-yui.png'
@@ -62,11 +55,11 @@ const Dashboard = () => {
         </div>
       </nav>
       <div className=' flex flex-col items-center justify-center'>
-        <div className='w-full max-w-screen-sm bg-yellow-100 '>
+        <div className='w-full max-w-screen-sm  '>
           <header className=''>
-            <div className='flex flex-col items-center justify-center w-full max-m-1'>
+            <div className='flex flex-col items-center justify-center w-full '>
               <motion.h1
-                className='text-4xl  pr-5 pl-5 pt-20'
+                className='text-7xl mt-20'
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{
@@ -76,36 +69,23 @@ const Dashboard = () => {
                   stiffness: 130,
                   ease: 'easeIn',
                 }}
+                style={{ scaleY: scrollYProgress }}
               >
                 Hello, my name is{' '}
                 <strong className='text-[#FE6A00]'>Yui Jensen</strong>
               </motion.h1>
-
-              <motion.div
-                className='flex flex-col mt-20 mb-20'
-                style={{ scale }}
-              >
-                <motion.a
-                  href=''
-                  className='mb-5 z-10'
-                  style={{ scaleY: scrollYProgress }}
-                >
-                  Scroll Down
-                </motion.a>
-                <FontAwesomeIcon
-                  icon={faArrowDown}
-                  style={{ color: '#4D4415' }}
-                  className='z-10'
-                />
-              </motion.div>
             </div>
           </header>
 
-          <section className='flex'>
-            <div>
-              <img src='../src/assets/image2.png' alt='' className='pt-20' />
+          <section className='flex items-center justify-center'>
+            <div className='flex flex-row items-center justify-center w-full'>
+              <img
+                className='gap-50px'
+                src='../src/assets/image2.png'
+                alt='my proflie'
+              />
               <div>
-                <h5 className=''>
+                <h5 className='text-3xl w-full w-2/4'>
                   I am Junior UX designer & Front End Developer with Back End
                   Development knowledge
                 </h5>

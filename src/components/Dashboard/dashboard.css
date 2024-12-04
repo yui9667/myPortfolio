@@ -39,7 +39,7 @@ li {
   gap: 50px;
   z-index: 5;
   padding: 40px;
-  margin: 0 auto;
+  margin: 10px;
 }
 .nav-menu.active {
   left: 0;

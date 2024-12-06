@@ -1,16 +1,37 @@
 import { useState } from 'react';
 import './dashboard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { motion, useViewportScroll, useTransform } from 'framer-motion';
+//import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import { faSun, faMoon, faArrowDown } from '@fortawesome/free-solid-svg-icons';
-import Welcome from '../Welcome/Welcome';
+import { Button } from '@material-tailwind/react';
+import {
+  Animator,
+  ScrollContainer,
+  ScrollPage,
+  batch,
+  Fade,
+  FadeIn,
+  FadeOut,
+  Move,
+  MoveIn,
+  MoveOut,
+  Sticky,
+  StickyIn,
+  StickyOut,
+  Zoom,
+  ZoomIn,
+  ZoomOut,
+} from 'react-scroll-motion';
+
 const Dashboard = () => {
-  const { scrollYProgress } = useViewportScroll();
-  const scale = useTransform(scrollYProgress, [0, 1], [0.2, 2]);
+  // const { scrollYProgress } = useViewportScroll();
+  // const scale = useTransform(scrollYProgress, [0, 1], [0.2, 2]);
   const [isOpen, setIsOpen] = useState(false);
+  const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
   const toggleHamburger = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <div>
       <nav className='nav-bar  '>
@@ -40,9 +61,15 @@ const Dashboard = () => {
               Contact
             </a>
           </li>
-          <div className=''>
-            <FontAwesomeIcon icon={faSun} style={{ color: '#e6620a' }} />
-            <FontAwesomeIcon icon={faMoon} style={{ color: '#FFD43B' }} />
+          <div className='pr-10'>
+            <FontAwesomeIcon
+              icon={faSun}
+              style={{ color: '#e6620a', margin: '10px', fontSize: '20px' }}
+            />
+            <FontAwesomeIcon
+              icon={faMoon}
+              style={{ color: '#FFD43B', fontSize: '20px' }}
+            />
           </div>
         </ul>
         <div
@@ -54,57 +81,66 @@ const Dashboard = () => {
           <span className='bar'></span>
         </div>
       </nav>
-      <div className=' flex flex-col items-center justify-center'>
-        <div className='w-full max-w-screen-sm  '>
-          <header className=''>
-            <div className='flex flex-col items-center justify-center w-full '>
-              <motion.h1
-                className='text-7xl mt-20'
-                initial={{ y: 100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{
-                  type: 'spring',
-                  duration: 1,
-                  delay: '0.8',
-                  stiffness: 130,
-                  ease: 'easeIn',
-                }}
-                style={{ scaleY: scrollYProgress }}
-              >
-                Hello, my name is{' '}
-                <strong className='text-[#FE6A00]'>Yui Jensen</strong>
-              </motion.h1>
-            </div>
-          </header>
 
-          <section className='flex items-center justify-center'>
-            <div className='flex flex-row items-center justify-center w-full'>
-              <img
-                className='gap-50px'
-                src='../src/assets/image2.png'
-                alt='my proflie'
-              />
-              <div>
-                <h5 className='text-3xl w-full w-2/4'>
-                  I am Junior UX designer & Front End Developer with Back End
-                  Development knowledge
-                </h5>
-                <a href='' className='underline decoration-1 tracking-tight'>
-                  See More About Me
-                </a>
+      <header>
+        <ScrollContainer className='flex flex-col items-center justify-center sticky'>
+          <ScrollPage page={1}>
+            <Animator>
+              <span className='text-5xl '>
+                Hello, My name is{' '}
+                <strong className='text-[#FE6A00]'>Yui Jensen</strong>
+              </span>
+            </Animator>
+          </ScrollPage>
+          <ScrollPage page={1}>
+            <Animator animation={batch(Fade(), Move(), Sticky())}>
+              <div className='flex flex-row items-center justify-center w-full '>
+                <img
+                  className='w-96'
+                  src='../src/assets/image2.png'
+                  alt='my proflie'
+                />
                 <div>
-                  <button>
-                    <a href=''>Resume</a>
-                  </button>
-                  <button>
-                    <a href=''>Linkedin</a>
-                  </button>
+                  <h3 className='text-4xl w-96'>
+                    I am Junior UX designer & Front End Developer with Back End
+                    Development knowledge
+                  </h3>
+                  <div
+                    className='flex flex-col justify-center
+                items-center mt-5'
+                  >
+                    <Button variant='text' className=' flex items-center mb-5 '>
+                      <a href=''>See More About Me</a>
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        strokeWidth={3}
+                        stroke='currentColor'
+                        className='h-5 w-5'
+                      >
+                        <path
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
+                          d='M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3'
+                        />
+                      </svg>
+                    </Button>
+                    <div>
+                      <Button className='mr-10 bg-amber-800'>
+                        <a href=''>Resume</a>
+                      </Button>
+                      <Button className='bg-amber-800'>
+                        <a href=''>Linkedin</a>
+                      </Button>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
-        </div>
-      </div>
+            </Animator>
+          </ScrollPage>
+        </ScrollContainer>
+      </header>
     </div>
   );
 };

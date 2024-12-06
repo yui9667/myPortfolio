@@ -2,6 +2,7 @@ import './Welcome.css';
 import { useFrame } from '@react-three/fiber';
 import { Text } from '@react-three/drei';
 import { useRef } from 'react';
+
 const Welcome = () => {
   const textRef = useRef();
   const scaleFactor = useRef(1);

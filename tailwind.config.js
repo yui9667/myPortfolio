@@ -4,6 +4,9 @@ module.exports = withMT({
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      colors: {
+        'brown-color': '#A0705B',
+      },
       keyframes: {
         float1: {
           '0%': { transform: 'translate(0,0)' },

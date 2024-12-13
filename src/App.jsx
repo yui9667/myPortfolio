@@ -3,6 +3,7 @@
 import './index.css';
 import Dashboard from './components/Dashboard/dashboard';
 import Welcome from './components/Welcome/Welcome';
+//import AboutMe from './components/AboutMe/AboutMe';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useRef, useState } from 'react';
 import { ScrollControls, useScroll, Scroll } from '@react-three/drei';

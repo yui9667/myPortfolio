@@ -9,12 +9,13 @@ import Contact from '../Contact/contact';
 const Dashboard = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
   const toggleHamburger = () => {
     setIsOpen(!isOpen);
   };
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (scrollY > window.innerHeight) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -27,29 +28,29 @@ const Dashboard = () => {
   return (
     <div>
       <nav className={`nav-bar ${isScrolled ? 'scrolled' : ''}`}>
-        <img
+        {/* <img
           src='../src/assets/logo-yui.png'
           alt='logo'
           className='pl-10 z-10 w-28'
-        />
+        /> */}
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
           <li className='nav-item'>
-            <a href='' className='nav-link'>
+            <a href='../AboutMeDetails/AboutMeDetails.jsx' className='nav-link'>
               About Me
             </a>
           </li>
           <li className='nav-item'>
-            <a href='' className='nav-link'>
+            <a href='../Task/Task.jsx' className='nav-link'>
               Projects
             </a>
           </li>
           <li className='nav-item'>
-            <a href='' className='nav-link'>
+            <a href='../AboutMeDetails/AboutMeDetails.jsx' className='nav-link'>
               Skills
             </a>
           </li>
           <li className='nav-item'>
-            <a href='' className='nav-link'>
+            <a href='../Contact/contact.jsx' className='nav-link'>
               Contact
             </a>
           </li>

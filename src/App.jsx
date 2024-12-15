@@ -3,14 +3,14 @@
 import './index.css';
 import Dashboard from './components/Dashboard/dashboard';
 import Welcome from './components/Welcome/Welcome';
-//import AboutMe from './components/AboutMe/AboutMe';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useRef, useState } from 'react';
 import { ScrollControls, useScroll, Scroll } from '@react-three/drei';
+//import AboutMe from './components/AboutMe/AboutMe';
 
 function AnimatedCircle({ setBgColor }) {
-  const circleRef = [useRef(), useRef()];
   const scrollData = useScroll();
+  const circleRef = [useRef(), useRef()];
   // #e3e3e3
   useFrame(() => {
     const scrollOffset = scrollData.offset;
@@ -18,8 +18,6 @@ function AnimatedCircle({ setBgColor }) {
       setBgColor('#fff');
     } else if (scrollOffset < 12) {
       setBgColor('#e3cc78');
-    } else if (scrollOffset < 13) {
-      setBgColor('orange');
     } else 'lightgreen';
     circleRef.forEach((circleRef, index) => {
       const scale = 1 + scrollOffset * (2 + index);
@@ -45,6 +43,7 @@ function AnimatedCircle({ setBgColor }) {
 }
 function App() {
   const [bgColor, setBgColor] = useState('#fff');
+
   return (
     <div
       style={{
@@ -60,6 +59,7 @@ function App() {
         </ScrollControls>
         <Welcome />
       </Canvas>
+
       <Dashboard />
     </div>
   );

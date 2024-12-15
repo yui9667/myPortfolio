@@ -7,7 +7,7 @@ import {
   ScrollPage,
   Move,
 } from 'react-scroll-motion';
-import Letter from '../Letter/Letter';
+
 const Contact = () => {
   const form = useRef();
   const fadeInAndUp = Move(1000, 0, 0, 0);
@@ -88,7 +88,6 @@ const Contact = () => {
                 className=' py-1 rounded-sm transition ease-in-out delay-100 bg-amber-800 hover:-translate-y-1 hover:scale-110  hover:bg-amber-700 duration-300 ...'
               />
             </motion.form>
-            <Letter />
           </section>
         </ScrollPage>
       </ScrollContainer>

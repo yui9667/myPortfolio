@@ -1,0 +1,22 @@
+#project1 {
+  background-image: url('/src/assets/quiz.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  max-width: 30%;
+  height: 50vh;
+  margin-left: 15%;
+  border-radius: 20px;
+  box-shadow: 3px 3px 5px #3d3d3d;
+}
+#project2 {
+  background-image: url('/src/assets/weather.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  max-width: 30%;
+  height: 50vh;
+  margin-left: 15%;
+  border-radius: 20px;
+  box-shadow: 3px 3px 5px #3d3d3d;
+}
